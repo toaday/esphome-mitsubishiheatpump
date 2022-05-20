@@ -229,6 +229,26 @@ void MitsubishiHeatPump::control(const climate::ClimateCall &call) {
                 hp->setVaneSetting("AUTO");
                 updated = true;
                 break;
+            case climate::CLIMATE_SWING_ONE:
+                hp->setVaneSetting("1");
+                updated = true;
+                break;
+            case climate::CLIMATE_SWING_TWO:
+                hp->setVaneSetting("2");
+                updated = true;
+                break;
+            case climate::CLIMATE_SWING_THREE:
+                hp->setVaneSetting("3");
+                updated = true;
+                break;
+            case climate::CLIMATE_SWING_FOUR:
+                hp->setVaneSetting("4");
+                updated = true;
+                break;
+            case climate::CLIMATE_SWING_FIVE:
+                hp->setVaneSetting("5");
+                updated = true;
+                break;
             case climate::CLIMATE_SWING_VERTICAL:
                 hp->setVaneSetting("SWING");
                 updated = true;
@@ -335,7 +355,16 @@ void MitsubishiHeatPump::hpSettingsChanged() {
      */
     if (strcmp(currentSettings.vane, "SWING") == 0) {
         this->swing_mode = climate::CLIMATE_SWING_VERTICAL;
-    }
+    } else if (strcmp(currentSettings.fan, "1") == 0) {
+        this->fan_mode = climate::CLIMATE_SWING_ONE;
+    } else if (strcmp(currentSettings.fan, "2") == 0) {
+        this->fan_mode = climate::CLIMATE_SWING_TWO;
+    } else if (strcmp(currentSettings.fan, "3") == 0) {
+        this->fan_mode = climate::CLIMATE_SWING_THREE;
+    } else if (strcmp(currentSettings.fan, "4") == 0) {
+        this->fan_mode = climate::CLIMATE_SWING_FOUR;
+    } else if (strcmp(currentSettings.fan, "5") == 0) {
+        this->fan_mode = climate::CLIMATE_SWING_FIVE;
     else {
         this->swing_mode = climate::CLIMATE_SWING_OFF;
     }
