@@ -336,8 +336,7 @@ void MitsubishiHeatPump::hpSettingsChanged() {
      */
     if (strcmp(currentSettings.vane, "SWING") == 0) {
         this->swing_mode = climate::CLIMATE_SWING_VERTICAL;
-    }
-    else {
+    } else {
         this->swing_mode = climate::CLIMATE_SWING_OFF;
     }
     ESP_LOGI(TAG, "Swing mode is: %i", this->swing_mode);
