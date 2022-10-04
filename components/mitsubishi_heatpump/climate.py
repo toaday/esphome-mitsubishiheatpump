@@ -89,6 +89,6 @@ def to_code(config):
     yield climate.register_climate(var, config)
     cg.add_library(
         name="HeatPump",
-        repository="https://github.com/SwiCago/HeatPump",
-        version="ed3b700dd4b110253368cc9f6960516d228e33d8",
+        repository="https://github.com/fejta/HeatPump",
+        version="4409dee38090af2b04b6739fc66a97f41782c8d7",
     )
